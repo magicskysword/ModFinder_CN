@@ -83,7 +83,7 @@ fork 自 https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder
 
 该部分内容保持原汁原味（故意的）
 
-* for starting this project in the first place ([ModFinder_WOTR](https://github.com/BarleyFlour/ModFinder_WOTR)) and working with Bubbles to complete like 80% before I decided to finish it
+* Barley for starting this project in the first place ([ModFinder_WOTR](https://github.com/BarleyFlour/ModFinder_WOTR)) and working with Bubbles to complete like 80% before I decided to finish it
 * Bubbles for his excellent work on the UI styling and Barley for handling the GitHub action setup
 * The modding community on [Discord](https://discord.com/invite/owlcat), an invaluable and supportive resource for help modding.
 * All the Owlcat modders who came before me, wrote documents, and open sourced their code.
