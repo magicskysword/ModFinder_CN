@@ -1,110 +1,94 @@
-# ModFinder
+# 模组开拓者汉化版
 
-### [![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip) Latest Release
+fork 自 https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder
 
+### [![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip)原版下载地址
 
-A tool for browsing and managing Pathfinder: Wrath of the Righteous mods and their dependencies.
+### [![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip)汉化版下载地址
 
-![Screenshot](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/screenshots/main.png)
+浏览与查看开拓者：正义之怒游戏Mod，及管理Mod依赖的工具
 
-## Features
+![截图](https://github.com/magicskysword/ModFinder_CN/blob/main/screenshots/main.png)
 
-* Browse mods hosted on Nexus and GitHub
-* Detects out of date mods
-* Automatically installs mods hosted on GitHub
-* Enable / disable mods
-* Detects missing dependencies, enabling one-click install (mods on GitHub) or download link (mods on Nexus)
-* Uninstall mods
-* Rollback mod updates
-* And more
+## 特点
 
-## For Users
+* 浏览托管在Github和Nexus上的Mod
+* 检测过期Mod
+* 自动安装Github上的托管Mod
+* 启用/禁用Mod
+* 检测到缺少的依赖时，一键安装（Github）或弹出下载链接（Nexus）
+* 卸载Mod
+* 回滚Mod更新
+* 以及更多
 
-[![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip) the latest release, extract the folder, and run `ModFinder.exe`!
+## 对用户
 
-### **You must have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed.**
+下载最新版本，解压文件，运行 `ModFinder.exe`!
 
-### You must have installed [UnityModManager](https://www.nexusmods.com/site/mods/21).
+### **你需要安装 [.NET 桌面运行时 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) 或更高版本。**
 
-### If it doesn't work, see [Troubleshooting](#troubleshooting).
+### 你必须已经安装了 [UnityModManager](https://www.nexusmods.com/site/mods/21)。
 
-Tips:
+### 如果依然无法正常使用，请查看 [故障排除](#故障排除)。
 
-* Searching checks mod name and author by default
-* You can search specifically name, author, or [tag](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/Tag.cs):
-    * `a:bub` to include authors with "bub" in their name, or `-a:bub` to exclude them
-    * `n:super` to include mods with "super" in the name, or `-n:super` to exclude them
-    * `t:game` to include tags with "game" in their name, or `-n:game` to exclude them
-* Version updates are checked every 30 minutes, but you need to restart the app to get the latest version data
-    * If the latest version is for a more recent game version (e.g beta) it will install it even if it doesn't work with your local version
-* When you open it mods missing pre-requisites are shown first, followed by mods with an update available
-* The overflow menu has more functionality like viewing the changelog, description, and homepage
-* When you update a mod using ModFinder you can revert to the previous version, open the overflow menu and select "Rollback"
-    
-### Missing a mod?
+提示:
 
-Ask the mod developer to add it or file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new).
+* 默认按Mod名和作者名进行搜索
+* 你可以搜索具体名称、作者或[标签](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/Tag.cs):
+  * `a:bub` 搜索作者名包含“bub”的Mod，或使用 `-a:bub` 来排除它们
+  * `n:super` 搜索Mod名包含“super”的Mod，或使用 `-n:super` 来排除它们
+  * `t:game` 搜索标签包含“super”的Mod，或使用 `-t:game` 来排除它们
+* 版本更新每30分钟检查一次，但你需要重启软件以获取更新
+  * 提示：有时最新版本是为最新的游戏版本构建的（如测试版），请谨慎更新
+* 当你打开软件时，缺少前置的Mod会优先展示，其次是
+* 溢出菜单有更多的功能，如查看变更日志、描述和主页
+* 当您使用ModFinder更新一个mod时，您可以恢复到以前的版本，打开溢出菜单并选择“回滚”
 
-## For Mod Devs
+### 缺少Mod?
 
-Currently ModFinder only supports UMM mods hosted on Nexus or GitHub.
+请通知开发者往源项目提 [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new)。（非本项目）
 
-To add (or change details about) your mod:
+## 开发者指南
 
-1. Update [internal_manifest.json](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ManifestUpdater/Resources/internal_manifest.json)
-    * Don't include any version data or description, this is automatically updated roughly every 2 hours
-    * You can submit a PR or file an issue
-    
-That's it! The manifest format is documented [in the code](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/ModManifest.cs).
+请参考源项目：https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder
 
-Make sure to apply the appropriate [tags](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/Tag.cs) so users can find your mod.
- 
-Assumptions for GitHub:
+## 故障排除
 
-* The first release asset is a zip file containing the mod (i.e. what a user would drag into UMM)
-    * You can specify a `ReleaseFilter`, look at [MewsiferConsole](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ManifestUpdater/Resources/internal_manifest.json) for an example
-* Your releases are tagged with a version string in the format `1.2.3e`. Prefixes are ignored.
-    * If there's a mismatch between your GitHub tag version and `Info.json` version it will think the mod is always out of date
+* 请确保你已经安装了 [UnityModManager](https://www.nexusmods.com/site/mods/21)
+  * 运行管理器并为正义之怒初始化
+* 请确保你安装了 [.NET 桌面运行时 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) 或更高版本
+  * .NET 6.0 与 .NET 7.0 应该也能使用，如果不行，请使用上面的链接安装5.0版本
+  * .NET 5.0与 .NET 运行时 5、 .NET 桌面运行时 5.0不是一样东西；如果你认为你已经安装了.net，但是依然无法运行，请尝试从上述链接进行安装
+* 尝试 [以管理员身份运行](https://www.itechtics.com/run-programs-administrator/)
+* 确保没有被杀毒软件拦截
+  * 一些杀毒软件会标记为木马软件
+    * ModFinder向GitHub发送下载mod元数据和mod本身的请求
+    * ModFinder也写入文件(日志)和删除，移动和解压缩文件相关的mods
+  * 更新日志包括一个sha1散列，您可以使用它来验证您的下载（注：翻译版本并未包含此hash值）
+  * 下面是v1.1 on的扫描结果： [VirusTotal](https://www.virustotal.com/gui/file/882b5b1e5eb0dc2d51413a663d116b89856ab3f35681505e7d5286f1ecd0aee6/detection) （注：这是源mod的扫描结果）
+* 提交 [问题](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new) 或在Discord上寻求帮助
+  * 分享你的日志文件: `%UserProfile%\AppData\Local\Modfinder\Log.txt`
 
-If necessary you can host your own `ModManifest` JSON file by adding a direct download link to `ExternalManifestUrls` in [master_manifest.json](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ManifestUpdater/Resources/master_manifest.json). Keep in mind, this will not be automatically updated so it is up to you to populate description and version info.
+### 对某个Mod有问题?
 
-### Want your mod removed from the list?
+如果对安装、下载、显示信息或任何其他内容有疑问，可以提交[问题](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new)，这包含不能使用或已废弃的Mod。
 
-File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new) or submit a PR.
+（注：这是对源Mod提交的问题，有关汉化问题请在本Mod下提交）
 
-## Troubleshooting
+### 其他问题?
 
-* Make sure you have [UnityModManager](https://www.nexusmods.com/site/mods/21) installed
-    * Run it and set it up for use with Wrath
-* Make sure you have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed
-    * .NET 6.0 and soon .NET 7.0 should work as well, but if not try the link above
-    * .NET 5.0 is not the same thing as the .NET Runtime 5.0 which is not the same thing as the .NET Desktop Runtime 5.0; if you think already have .NET 5.0 or 6.0 installed and it isn't working, try that specific link
-* Try [running it as an Administrator](https://www.itechtics.com/run-programs-administrator/)
-* Make sure your anti-virus is not blocking it
-    * Some anti-virus flags it as a trojan
-        * ModFinder sends requests to GitHub to download mod metadata and mods themselves
-        * ModFinder also writes files (logs) and deletes, moves, and unzips files related to mods you have installed
-    * Update changelog includes a sha1 hash you can use to verify your download
-    * Here are the scan results for v1.1 on [VirusTotal](https://www.virustotal.com/gui/file/882b5b1e5eb0dc2d51413a663d116b89856ab3f35681505e7d5286f1ecd0aee6/detection)
-* File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new) or reach out on Discord
-    * Share your log file: `%UserProfile%\AppData\Local\Modfinder\Log.txt`
+没错：提交[问题](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new). 并包含你的日志内容： `%UserProfile%\AppData\Local\Modfinder\Log.txt`.
 
-### Problems with a mod?
+## 致谢
 
-If there's an issue installing, downloading, displaying information about, or anything else regarding a specific mod file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new). That includes mods that no longer work and are abandoned.
+该部分内容保持原汁原味（故意的）
 
-### Other issues?
-
-You guessed it: file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new). Include your log file: `%UserProfile%\AppData\Local\Modfinder\Log.txt`.
-
-## Acknowledgements
-
-* Barley for starting this project in the first place ([ModFinder_WOTR](https://github.com/BarleyFlour/ModFinder_WOTR)) and working with Bubbles to complete like 80% before I decided to finish it
+* for starting this project in the first place ([ModFinder_WOTR](https://github.com/BarleyFlour/ModFinder_WOTR)) and working with Bubbles to complete like 80% before I decided to finish it
 * Bubbles for his excellent work on the UI styling and Barley for handling the GitHub action setup
 * The modding community on [Discord](https://discord.com/invite/owlcat), an invaluable and supportive resource for help modding.
 * All the Owlcat modders who came before me, wrote documents, and open sourced their code.
 
-## Interested in modding?
+## 对Mod开发感兴趣？
 
-* Check out the [OwlcatModdingWiki](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki).
-* Join us on [Discord](https://discord.com/invite/owlcat).
+* 查看 [OwlcatModdingWiki](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki).
+* 加入 [Discord](https://discord.com/invite/owlcat).
