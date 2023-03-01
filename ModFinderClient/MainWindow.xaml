@@ -40,7 +40,7 @@
       <Setter Property="Background" Value="{StaticResource bg-paper-generic}"></Setter>
       <Setter Property="BorderThickness" Value="0"></Setter>
       <Setter Property="HasDropShadow" Value="True"></Setter>
-      <Setter Property="FontFamily" Value="Constantia"></Setter>
+      <Setter Property="FontFamily" Value="Microsoft YaHei"></Setter>
       <Setter Property="FontSize" Value="14"></Setter>
       <Setter Property="Template">
         <Setter.Value>
@@ -325,7 +325,7 @@
       </Grid>
     </ControlTemplate>
     <Style TargetType="TextBlock">
-      <Setter Property="FontFamily" Value="Constantia"></Setter>
+      <Setter Property="FontFamily" Value="Microsoft YaHei"></Setter>
     </Style>
     <Style TargetType="ScrollBar">
       <Setter Property="Template" Value="{StaticResource VerticalScrollBar}"></Setter>
@@ -333,7 +333,7 @@
     <Style TargetType="DataGridColumnHeader">
       <Setter Property="Background" Value="Transparent"></Setter>
       <Setter Property="FontSize" Value="20"></Setter>
-      <Setter Property="FontFamily" Value="Constantia"></Setter>
+      <Setter Property="FontFamily" Value="Microsoft YaHei"></Setter>
       <Setter Property="FontWeight" Value="Bold"></Setter>
     </Style>
   </Window.Resources>
@@ -409,11 +409,11 @@
             </ColumnDefinition>
 
           </Grid.ColumnDefinitions>
-          <TextBlock x:Name="Header" FontSize="30" FontFamily="Constantia" FontWeight="Bold" Foreground="DarkSlateGray" Padding="0,0,0,10" Grid.Column="0">
-                        Modfinder: Wrath of the Righteous
+          <TextBlock x:Name="Header" FontSize="30" FontFamily="Microsoft YaHei" FontWeight="Bold" Foreground="DarkSlateGray" Padding="0,0,0,10" Grid.Column="0">
+                        模组开拓者：正义之怒
           </TextBlock>
           <TextBox
-            Grid.Column="1" x:Name="Filter" Height="34" Width="250" FontFamily="Constantia" VerticalContentAlignment="Center"
+            Grid.Column="1" x:Name="Filter" Height="34" Width="250" FontFamily="Microsoft YaHei" VerticalContentAlignment="Center"
             Background="Transparent" BorderThickness="3" TextBoxBase.TextChanged="Filter_TextChanged">
           </TextBox>
           <ToggleButton d:DataContext="{d:DesignInstance Type=local:ModDatabase}" x:Name="showInstalledToggle" Grid.Column="2" Width="230" IsChecked="{Binding ShowInstalled}">
@@ -426,8 +426,8 @@
                     <ColumnDefinition Width="50"></ColumnDefinition>
                     <ColumnDefinition Width="80"></ColumnDefinition>
                   </Grid.ColumnDefinitions>
-                  <TextBlock FontFamily="Constantia" FontWeight="Bold" Grid.Column="0" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0">Show:</TextBlock>
-                  <TextBlock FontFamily="Constantia" FontWeight="Bold" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0">All</TextBlock>
+                  <TextBlock FontFamily="Microsoft YaHei" FontWeight="Bold" Grid.Column="0" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0">显示:</TextBlock>
+                  <TextBlock FontFamily="Microsoft YaHei" FontWeight="Bold" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0">全部</TextBlock>
                   <Image Source="pack://application:,,,/icons/UI_Toggler_BG.png" Grid.Column="2" HorizontalAlignment="Right"></Image>
                   <Image x:Name="knob" Source="pack://application:,,,/icons/UI_RoundButton_Default.png" Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="3,0,3,0"></Image>
                   <Rectangle x:Name="tint" Grid.Column="2" Opacity="0.2" Height="24" Visibility="Hidden">
@@ -438,7 +438,7 @@
                       <ImageBrush ImageSource="pack://application:,,,/icons/UI_Toggler_BG.png"></ImageBrush>
                     </Rectangle.OpacityMask>
                   </Rectangle>
-                  <TextBlock FontFamily="Constantia" FontWeight="Bold"  Grid.Column="3" VerticalAlignment="Center" Padding="8,0,0,0">Installed</TextBlock>
+                  <TextBlock FontFamily="Microsoft YaHei" FontWeight="Bold"  Grid.Column="3" VerticalAlignment="Center" Padding="8,0,0,0">已安装</TextBlock>
                 </Grid>
                 <ControlTemplate.Triggers>
                   <Trigger Property="IsChecked" Value="True">
@@ -471,11 +471,11 @@
             </ToggleButton.Template>
           </ToggleButton>
           <Button x:Name="closeButton" Grid.Column="5" Style="{StaticResource CloseButtonSquare}" Width="32" Height="32" />
-          <Button x:Name="lookButton" Grid.Column="3" Style="{StaticResource LookButtonSquare}" Width="32" Height="32" ToolTip="Re-scan installed mods" Click="LookButton_Click"/>
+          <Button x:Name="lookButton" Grid.Column="3" Style="{StaticResource LookButtonSquare}" Width="32" Height="32" ToolTip="重新扫描安装的Mod" Click="LookButton_Click"/>
           <Button x:Name="settingsButton" Grid.Column="4" Style="{StaticResource SettingsButtonSquare}" Width="32" Height="32" Click="Settings_Click">
             <Button.ContextMenu>
               <ContextMenu Style="{StaticResource OwlContextMenu}">
-                <MenuItem Header="Clear Cache" Click="ClearCache"></MenuItem>
+                <MenuItem Header="清理缓存" Click="ClearCache"></MenuItem>
               </ContextMenu>
             </Button.ContextMenu>
           </Button>
@@ -484,8 +484,8 @@
           <Grid x:Name="dropTarget" Height="100" AllowDrop="True" Margin="0,10,0,0">
             <Rectangle Fill="{StaticResource drop-bg}" Opacity="0.7" Stroke="{x:Null}" >
             </Rectangle>
-            <TextBlock FontSize="42" FontStyle="Italic" FontFamily="Constantia" Foreground="DarkGray" Padding="0,0,0,10" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            Drag zips here to install
+            <TextBlock FontSize="42" FontStyle="Italic" FontFamily="Microsoft YaHei" Foreground="DarkGray" Padding="0,0,0,10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            将压缩文件拖到此处安装
             </TextBlock>
           </Grid>
         </DockPanel>
@@ -495,13 +495,13 @@
               <StackPanel>
                 <DockPanel LastChildFill="False">
                   <TextBlock Margin="0,0,15,0" FontSize="30" FontWeight="Bold" Text="{Binding Name, Mode=OneWay}"></TextBlock>
-                  <Button x:Name="uninstallButton" IsEnabled="{Binding CanUninstall}" DockPanel.Dock="Right" Style="{StaticResource UninstallButtonSquare}" Width="32" Height="32" ToolTip="Uninstall" Click="UninstallMod"/>
-                  <Button x:Name="rollbackButton" IsEnabled="{Binding CanRollback}" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource RollbackButtonSquare}" Width="32" Height="32" ToolTip="Revert to previous version" Click="Rollback"/>
-                  <Button x:Name="homepageButton" IsEnabled="{Binding HasHomepage}" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource HomepageButtonSquare}" Width="32" Height="32" ToolTip="Homepage" Click="OpenHomepage"/>
-                  <Button x:Name="descriptionButton" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource DescriptionButtonSquare}" Width="32" Height="32" ToolTip="Description" Click="ShowModDescription"/>
-                  <Button x:Name="changelogButton" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource ChangelogButtonSquare}" Width="32" Height="32" ToolTip="Changelog" Click="ShowModChangelog"/>
+                  <Button x:Name="uninstallButton" IsEnabled="{Binding CanUninstall}" DockPanel.Dock="Right" Style="{StaticResource UninstallButtonSquare}" Width="32" Height="32" ToolTip="卸载" Click="UninstallMod"/>
+                  <Button x:Name="rollbackButton" IsEnabled="{Binding CanRollback}" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource RollbackButtonSquare}" Width="32" Height="32" ToolTip="回滚至上个版本" Click="Rollback"/>
+                  <Button x:Name="homepageButton" IsEnabled="{Binding HasHomepage}" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource HomepageButtonSquare}" Width="32" Height="32" ToolTip="主页" Click="OpenHomepage"/>
+                  <Button x:Name="descriptionButton" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource DescriptionButtonSquare}" Width="32" Height="32" ToolTip="描述" Click="ShowModDescription"/>
+                  <Button x:Name="changelogButton" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource ChangelogButtonSquare}" Width="32" Height="32" ToolTip="改动日志" Click="ShowModChangelog"/>
                 </DockPanel>
-                <TextBlock FontSize="18" Margin="0,-5,0,5" Text="{Binding Author, Mode=OneWay, StringFormat='by {0}'}"></TextBlock>
+                <TextBlock FontSize="18" Margin="0,-5,0,5" Text="{Binding Author, Mode=OneWay, StringFormat='来自 {0}'}"></TextBlock>
                 <Grid>
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition>
@@ -527,22 +527,22 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                   </Grid.RowDefinitions>
-                  <TextBlock FontSize="16" Text="Latest Version:"></TextBlock>
+                  <TextBlock FontSize="16" Text="最新版本:"></TextBlock>
                   <TextBlock FontSize="16" Text="{Binding Latest.Version, Mode=OneWay}" Grid.Column="1"></TextBlock>
                   
-                  <TextBlock FontSize="16" Text="Last Updated:" Grid.Column="2"></TextBlock>
+                  <TextBlock FontSize="16" Text="最后更新:" Grid.Column="2"></TextBlock>
                   <TextBlock FontSize="16" Text="{Binding LastUpdated, Mode=OneWay}" Grid.Column="3"></TextBlock>
 
-                  <TextBlock FontSize="16" Text="Source:" Grid.Column="4" TextAlignment="Right" Margin="0 0 8 0"></TextBlock>
+                  <TextBlock FontSize="16" Text="源:" Grid.Column="4" TextAlignment="Right" Margin="0 0 8 0"></TextBlock>
                   <TextBlock FontSize="16" Text="{Binding Source, Mode=OneWay}" Grid.Column="5"></TextBlock>
 
                   <TextBlock FontSize="16" Grid.Row="1" Text="ID:" Grid.Column="4" TextAlignment="Right" Margin="0 0 8 0"></TextBlock>
                   <TextBlock FontSize="16" Grid.Row="1" Text="{Binding ModId.Id, Mode=OneWay}" Grid.Column="5"></TextBlock>
 
-                  <TextBlock FontSize="16" Text="Installed:" Width="130" Grid.Row="1"></TextBlock>
+                  <TextBlock FontSize="16" Text="安装版本:" Width="130" Grid.Row="1"></TextBlock>
                   <TextBlock FontSize="16" Text="{Binding InstalledVersion, Mode=OneWay}" Grid.Row="1" Grid.Column="1"></TextBlock>
 
-                  <TextBlock FontSize="16" Text="Last Checked:" Grid.Row="1" Grid.Column="2"></TextBlock>
+                  <TextBlock FontSize="16" Text="检查时间:" Grid.Row="1" Grid.Column="2"></TextBlock>
                   <TextBlock FontSize="16" Text="{Binding LastChecked, Mode=OneWay}" Grid.Row="1" Grid.Column="3"></TextBlock>
                 </Grid>
                 <TextBlock Padding="0,5,0,0" FontSize="18" Text="{Binding About, Mode=OneTime}" TextWrapping="Wrap"></TextBlock>
@@ -565,7 +565,7 @@
                 <Setter Property="Background" Value="Transparent"></Setter>
                 <Setter Property="Foreground" Value="Black"></Setter>
                 <Setter Property="FontSize" Value="16"></Setter>
-                <Setter Property="FontFamily" Value="Constantia"></Setter>
+                <Setter Property="FontFamily" Value="Microsoft YaHei"></Setter>
                 <Setter Property="BorderThickness" Value="0"></Setter>
                 <Setter Property="VerticalAlignment" Value="Center"></Setter>
                 <Style.Triggers>
@@ -602,28 +602,28 @@
             <DataGrid.Background>Transparent</DataGrid.Background>
 
             <DataGrid.Columns>
-              <DataGridTemplateColumn Header="  Enabled" Width="105" CanUserResize="False">
+              <DataGridTemplateColumn Header="  启用" Width="105" CanUserResize="False">
                 <DataGridTemplateColumn.CellTemplate>
                   <DataTemplate>
                         <local:SlideToggle LeftText="{Binding EnabledText}" IsEnabled="{Binding IsInstalled}" IsChecked="{Binding Enabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></local:SlideToggle>
                   </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
               </DataGridTemplateColumn>
-              <DataGridTextColumn Header="Name" Width="280" Binding="{Binding Name, Mode=OneWay}">
+              <DataGridTextColumn Header="名称" Width="280" Binding="{Binding Name, Mode=OneWay}">
                 <DataGridTextColumn.ElementStyle>
                   <Style TargetType="TextBlock">
                     <Setter Property="Padding" Value="0,0,15,0"/>
                   </Style>
                 </DataGridTextColumn.ElementStyle>
               </DataGridTextColumn>
-              <DataGridTextColumn Header="Author" Width="230" Binding="{Binding Author, Mode=OneWay}">
+              <DataGridTextColumn Header="作者" Width="230" Binding="{Binding Author, Mode=OneWay}">
                 <DataGridTextColumn.ElementStyle>
                   <Style TargetType="TextBlock">
                     <Setter Property="Margin" Value="0,0,15,0"/>
                   </Style>
                 </DataGridTextColumn.ElementStyle>
               </DataGridTextColumn>
-              <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}">
+              <DataGridTextColumn Header="状态" Width="*" Binding="{Binding StatusText, Mode=OneWay}">
                 <DataGridTextColumn.ElementStyle>
                   <Style TargetType="TextBlock">
                     <Setter Property="Margin" Value="0,0,15,0"/>

@@ -52,7 +52,7 @@ namespace ModFinder.UI
     public string Author => Manifest.Author;
     public string About => Manifest.About;
     public string Description => Manifest.Description ?? "-";
-    public string EnabledText => Enabled ? "On" : "Off";
+    public string EnabledText => Enabled ? "开启" : "关闭";
     public string Source => Manifest.Service.Name;
 
     public bool Enabled
@@ -284,20 +284,20 @@ namespace ModFinder.UI
     {
       if (InstallState == InstallState.Installing)
       {
-        return "Installing...";
+        return "安装中...";
       }
 
       if (!IsInstalled)
       {
         if (IsCached)
-          return "Not installed (in cache)";
+          return "没有安装 (已缓存)";
         else
-          return "Not installed";
+          return "没有安装";
       }
 
       if (InstalledVersion < Latest.Version)
       {
-        return $"Update available from {InstalledVersion} to {Latest.Version}";
+        return $"可用的更新： {InstalledVersion} 至 {Latest.Version}";
       }
 
       if (MissingRequirements.Any())
@@ -311,10 +311,10 @@ namespace ModFinder.UI
             sb.Append($"{id.Id}-{version}, ");
         }
         sb.Remove(sb.Length - 2, 2);
-        return $"Missing pre-reqs: {sb}";
+        return $"缺少前置: {sb}";
       }
 
-      return $"Installed: {InstalledVersion}";
+      return $"已安装: {InstalledVersion}";
     }
 
     private StatusIcon GetStatusIcon()
@@ -333,15 +333,15 @@ namespace ModFinder.UI
     private string GetButtonText()
     {
       if (Status.State == InstallState.Installing)
-        return "Installing...";
+        return "安装中...";
       if (Status.State == InstallState.Uninstalling)
-        return "Uninstalling...";
+        return "卸载中...";
       if (IsInstalled && InstalledVersion < Latest.Version)
-        return "Update";
+        return "更新";
       if (CanInstall)
-        return "Install";
+        return "安装";
       if (CanDownload)
-        return "Download";
+        return "下载";
       if (MissingRequirements.Any())
       {
         var nextMod = GetNextAvailableRequirement();
@@ -349,14 +349,14 @@ namespace ModFinder.UI
         {
           if (nextMod.CanInstall)
           {
-            var text = $"Install {nextMod.Name}";
+            var text = $"安装 {nextMod.Name}";
             if (text.Length > 20)
               text = $"{text[..20]}...";
             return text;
           }
           if (nextMod.CanDownload)
           {
-            var text = $"Download {nextMod.Name}";
+            var text = $"下载 {nextMod.Name}";
             if (text.Length > 20)
               text = $"{text[..20]}...";
             return text;
@@ -365,7 +365,7 @@ namespace ModFinder.UI
       }
       if (Latest.Version == default)
         return "-";
-      return "Up to date";
+      return "最新版本";
     }
 
     #region Notify
