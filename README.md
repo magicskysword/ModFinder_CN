@@ -4,7 +4,7 @@ fork 自 https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder
 
 ### [![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip)原版下载地址
 
-### [![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip)汉化版下载地址
+### [![Download](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/magicskysword/ModFinder_CN/releases/latest/download/ModFinder.zip)汉化版下载地址
 
 浏览与查看开拓者：正义之怒游戏Mod，及管理Mod依赖的工具
 
