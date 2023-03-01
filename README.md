@@ -21,7 +21,7 @@ fork 自 https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder
 * 回滚Mod更新
 * 以及更多
 
-## 对用户
+## 用户指南
 
 下载最新版本，解压文件，运行 `ModFinder.exe`!
 
