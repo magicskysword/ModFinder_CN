@@ -667,12 +667,12 @@
                       <Button Grid.Column="1" x:Name="MoreOptions" Style="{StaticResource SquareButton}" Height="30" Content="..." Tag="{Binding}" Click="MoreOptions_Click">
                         <Button.ContextMenu>
                           <ContextMenu Style="{StaticResource OwlContextMenu}">
-                            <MenuItem Header="Show description" Click="ShowModDescription"></MenuItem>
-                            <MenuItem Header="Show changelog" Click="ShowModChangelog"></MenuItem>
-                            <MenuItem Header="Open homepage" Visibility="{Binding HomepageVisibility}" Click="OpenHomepage"></MenuItem>
-                            <MenuItem Header="Uninstall" Visibility="{Binding UninstallVisibility}" Click="UninstallMod"></MenuItem>
-                            <MenuItem Header="Rollback" Visibility="{Binding RollbackVisibility}" Click="Rollback"></MenuItem>
-                            <MenuItem Header="Open Folder" Visibility="{Binding UninstallVisibility}" Click="OpenFolder"></MenuItem>
+                            <MenuItem Header="显示描述" Click="ShowModDescription"></MenuItem>
+                            <MenuItem Header="显示改动日志" Click="ShowModChangelog"></MenuItem>
+                            <MenuItem Header="打开主页" Visibility="{Binding HomepageVisibility}" Click="OpenHomepage"></MenuItem>
+                            <MenuItem Header="卸载" Visibility="{Binding UninstallVisibility}" Click="UninstallMod"></MenuItem>
+                            <MenuItem Header="回滚" Visibility="{Binding RollbackVisibility}" Click="Rollback"></MenuItem>
+                            <MenuItem Header="打开文件夹" Visibility="{Binding UninstallVisibility}" Click="OpenFolder"></MenuItem>
                           </ContextMenu>
                         </Button.ContextMenu>
                       </Button>
