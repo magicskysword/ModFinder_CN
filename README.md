@@ -37,10 +37,10 @@ fork 自 https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder
 * 你可以搜索具体名称、作者或[标签](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/Tag.cs):
   * `a:bub` 搜索作者名包含“bub”的Mod，或使用 `-a:bub` 来排除它们
   * `n:super` 搜索Mod名包含“super”的Mod，或使用 `-n:super` 来排除它们
-  * `t:game` 搜索标签包含“super”的Mod，或使用 `-t:game` 来排除它们
+  * `t:game` 搜索标签包含“game”的Mod，或使用 `-t:game` 来排除它们
 * 版本更新每30分钟检查一次，但你需要重启软件以获取更新
   * 提示：有时最新版本是为最新的游戏版本构建的（如测试版），请谨慎更新
-* 当你打开软件时，缺少前置的Mod会优先展示，其次是
+* 当你打开软件时，缺少前置的Mod会优先展示，其次是已安装的Mod
 * 溢出菜单有更多的功能，如查看变更日志、描述和主页
 * 当您使用ModFinder更新一个mod时，您可以恢复到以前的版本，打开溢出菜单并选择“回滚”
 
